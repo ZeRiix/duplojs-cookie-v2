@@ -1,0 +1,51 @@
+{
+  "name": "@duplojs/cookie-v2",
+  "author": "zeriix",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZeRiix/duplojs-cookie-v2.git"
+  },
+  "license": "Apache-2.0",
+  "types": "./types/index.d.ts",
+  "exports": {
+    "default": {
+      "import": "./.build/index.mjs",
+      "require": "./.build/index.cjs",
+      "types": "./types/index.d.ts"
+    }
+  },
+  "files": [
+    ".build",
+    "types",
+    "README.md"
+  ],
+  "scripts": {
+    "build:scripts": "rollup -c",
+    "build:types": "tsc -p tsconfig.types.json && tsc-alias -p tsconfig.types.json",
+    "build": "npm run build:scripts && npm run build:types",
+	"lint": "eslint . --ext .ts",
+	"lint:fix": "eslint . --ext .ts --fix"
+  },
+  "dependencies": {
+    "@duplojs/core": "^0.14.2",
+    "@types/cookie": "^0.6.0",
+    "cookie": "^0.6.0"
+  },
+  "devDependencies": {
+    "@duplojs/eslint": "^0.2.2",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^22.5.5",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "eslint": "^9.10.0",
+    "rollup": "^4.22.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "tsc-alias": "^1.8.10",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.2"
+  }
+}
